@@ -2,8 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-namespace ScriptableObjects
-{
+
     public class Item : ScriptableObject    {
 
         public int id;
@@ -14,4 +13,3 @@ namespace ScriptableObjects
             throw new NotImplementedException();
         }
     }
-}

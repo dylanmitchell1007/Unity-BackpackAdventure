@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using ScriptableObjects;
 public class SpawnGameObject : MonoBehaviour
 {
 
@@ -13,6 +13,7 @@ public class SpawnGameObject : MonoBehaviour
         TmpPrefab = Instantiate(Prefab, transform.position, transform.rotation);
         
     }
+
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))

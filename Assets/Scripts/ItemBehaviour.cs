@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ScriptableObjects;
 
-using Item = ScriptableObjects.Item;
 
 public class ItemBehaviour : MonoBehaviour {
     public Item ItemConfig;
-    [HideInInspector]
+    //[HideInInspector]
     public Item ItemRuntime;
     public void Start()
     {
