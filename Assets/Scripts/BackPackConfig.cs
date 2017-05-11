@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-    public class BackPackConfig : ScriptableObject {
-        List<ScriptableObjects.Item> Items; 
-
-    }
+[CreateAssetMenu(fileName ="BackPackConfig",menuName ="BackPackConfig",order =1)]
+public class BackPackConfig : ScriptableObject
+{
+    public List<ScriptableObjects.Item> items;
+    public int capacity;
+}
