@@ -23,6 +23,9 @@ public class BackPackBehaviour : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
             this.transform.position += new Vector3(0.1f, 0, 0);
+
+
+        
     }
     public void LoadBackPack(BackPackConfig newBackpack)
     {
