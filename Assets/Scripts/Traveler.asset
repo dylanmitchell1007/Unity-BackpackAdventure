@@ -8,8 +8,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 529495145efa8a94a85e4d470962b549, type: 3}
-  m_Name: CombatKnife
+  m_Script: {fileID: 11500000, guid: c965c079decdd1944a516d5f86777cf4, type: 3}
+  m_Name: Traveler
   m_EditorClassIdentifier: 
-  id: 0
-  m_name: 
+  items: []
+  capacity: 0
