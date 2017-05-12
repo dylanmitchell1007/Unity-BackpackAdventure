@@ -20,7 +20,7 @@ public class PickupEncounterBehaviour : MonoBehaviour
             print("Collision");
             ItemBehaviour b = this.GetComponent<ItemBehaviour>();
             other.gameObject.GetComponent<BackPackBehaviour>().AddItem(b.ItemRuntime);
-            Destroy(TmpPrefab, 2.0f);
+            Destroy(Prefab);
         }
     }
     
