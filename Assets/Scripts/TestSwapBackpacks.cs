@@ -11,6 +11,7 @@ public class TestSwapBackpacks : MonoBehaviour
         {
             other.GetComponent<BackPackBehaviour>().LoadBackPack(ThisBackPackConfig);
         }
+        GameObject.Destroy(this.gameObject);
     }
 
 }
