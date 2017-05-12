@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17f92753c9aa2a442a76c66daaf80fb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemConfig: {fileID: 11400000, guid: 97f08b728e58df14b92960e8d305b66e, type: 2}
+  ItemConfig: {fileID: 11400000, guid: c9265f771e07af84aab1ee7888dbe25a, type: 2}
   ItemRuntime: {fileID: 0}
 --- !u!114 &114544925436627722
 MonoBehaviour:
