@@ -11,5 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c965c079decdd1944a516d5f86777cf4, type: 3}
   m_Name: Traveler
   m_EditorClassIdentifier: 
-  items: []
-  capacity: 0
+  Items:
+  - {fileID: 11400000, guid: 3ec4e0b9fad03554db7025b0d78387db, type: 2}
+  Capacity: 0
