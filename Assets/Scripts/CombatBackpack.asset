@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c965c079decdd1944a516d5f86777cf4, type: 3}
-  m_Name: BackPackConfig
+  m_Name: CombatBackpack
   m_EditorClassIdentifier: 
   items: []
   capacity: 0
