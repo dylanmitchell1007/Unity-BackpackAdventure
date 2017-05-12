@@ -4,6 +4,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="BackPackConfig",menuName ="BackPackConfig",order =1)]
 public class BackPackConfig : ScriptableObject
 {
-    public List<Item> items;
-    public int capacity;
+    public List<Item> Items;
+    public int Capacity;
 }

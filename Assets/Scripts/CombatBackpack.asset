@@ -11,5 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c965c079decdd1944a516d5f86777cf4, type: 3}
   m_Name: CombatBackpack
   m_EditorClassIdentifier: 
-  items: []
-  capacity: 0
+  Items:
+  - {fileID: 11400000, guid: ad3beb625345a134bbc5e6ee8e4f8e37, type: 2}
+  Capacity: 0

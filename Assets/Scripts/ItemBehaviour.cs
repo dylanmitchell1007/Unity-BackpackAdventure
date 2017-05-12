@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using ScriptableObjects;
-
+using UnityEngine.Events;
 
 public class ItemBehaviour : MonoBehaviour {
     public Item ItemConfig;
@@ -11,6 +11,8 @@ public class ItemBehaviour : MonoBehaviour {
     public void Start()
     {
        ItemRuntime = Instantiate(ItemConfig);
-
+        
     }
+   
+   
 }

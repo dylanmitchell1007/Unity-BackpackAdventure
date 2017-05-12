@@ -9,7 +9,7 @@ public class TestSwapBackpacks : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<BackPackBehaviour>().LoadBackPack(ThisBackPackConfig);
+            other.GetComponent<BackPackBehaviour>().LoadBackPackIn(ThisBackPackConfig);
         }
         GameObject.Destroy(this.gameObject);
     }
