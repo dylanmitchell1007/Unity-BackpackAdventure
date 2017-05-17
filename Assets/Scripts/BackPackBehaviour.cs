@@ -12,7 +12,7 @@ public class BackPackBehaviour : MonoBehaviour
     public int Capacity;
     public BackPackConfig Backpackconfig;
     [System.Serializable]
-    public class OnBackPackChange : UnityEvent
+    public class OnBackPackChange : UnityEvent<BackPackBehaviour>
     {
     }
 
@@ -65,7 +65,7 @@ public class BackPackBehaviour : MonoBehaviour
         if (Items.Count < Capacity)
         {
             Items.Add(item);
-            onBackPackChange.Invoke();
+            onBackPackChange.Invoke(this);
         }
     }
 
@@ -74,7 +74,7 @@ public class BackPackBehaviour : MonoBehaviour
         if (Items.Contains(item))
         {
             Items.Remove(item);
-            onBackPackChange.Invoke();
+            onBackPackChange.Invoke(this);
             
         }
     }
