@@ -37,16 +37,7 @@ public class BackPackBehaviour : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
             this.transform.position += new Vector3(.1f, 0, 0);
 
-        LargeNumberStorage a = new LargeNumberStorage();
-        LargeNumberStorage b = new LargeNumberStorage();
-        a.number = new List<int>();
-        b.number = new List<int>();
-        a.number.Add(6);
-        a.number.Add(6);
-        b.number.Add(6);
-        b.number.Add(2);
-        b.number.Add(8);
-        a = a - b;
+       
     }
 
     public void LoadBackPackIn(BackPackConfig newBackpack)
