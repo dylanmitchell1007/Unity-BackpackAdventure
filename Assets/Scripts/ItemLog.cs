@@ -11,9 +11,17 @@ public class ItemLog : MonoBehaviour
         text.text = "";
     }
 
+    void OnEnable()
+    {
+        PickupEncounterBehaviour.OnEvent.AddListener(OnItemAction);
+    }
 
+    void OnDisable()
+    {
+        PickupEncounterBehaviour.OnEvent.RemoveListener(OnItemAction);
+    }
     public void OnItemAction(Item item)
     {
-        text.text += item.m_name + "\n";
+        text.text += "Item picked up: " + item.m_name + "\n";
     }
 }

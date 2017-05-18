@@ -5,7 +5,7 @@ using ScriptableObjects;
 
 public class PickupEncounterBehaviour : MonoBehaviour
 {
-    public ItemEvent OnEvent;
+    public static ItemEvent OnEvent = new ItemEvent();
     public GameObject Prefab;
     [HideInInspector]
     public GameObject TmpPrefab;
