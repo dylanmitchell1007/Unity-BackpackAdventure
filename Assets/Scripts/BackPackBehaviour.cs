@@ -23,9 +23,6 @@ public class BackPackBehaviour : MonoBehaviour
         foreach (var i in Backpackconfig.Items)
             AddItem(i);
     }
-
-
-
     private void Update()
     {
         if (Input.GetKey(KeyCode.A))
@@ -36,8 +33,6 @@ public class BackPackBehaviour : MonoBehaviour
             transform.position += new Vector3(0, 0, -.1f);
         if (Input.GetKey(KeyCode.D))
             this.transform.position += new Vector3(.1f, 0, 0);
-
-       
     }
 
     public void LoadBackPackIn(BackPackConfig newBackpack)
