@@ -6,7 +6,6 @@ public class ItemUI : MonoBehaviour
 {
     //public BackPackBehaviour items;
     public Text ItemText;
-
     public void ChangeItemText(BackPackBehaviour bp)
     {
         ItemText.text = "BackPack items: \n";

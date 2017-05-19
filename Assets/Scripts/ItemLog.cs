@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
 public class ItemLog : MonoBehaviour
@@ -14,9 +15,34 @@ public class ItemLog : MonoBehaviour
 
     void Update()
     {
-        if (timer > 7)
+        if (timer > 3)
         {
-            text.text = text.text.TrimStart(firstSequence.ToCharArray()) ;
+            bool found = false;
+            for (int i = 0; i < text.text.Length; i++)
+            {
+                if (text.text[i] == firstSequence[0])
+                    for (int j = 0; j < firstSequence.Length; j++)
+                    {
+                        if (text.text[j + i] != firstSequence[j])
+                            break;
+                        if (j == firstSequence.Length - 1)
+                            found = true;
+                    }
+                if (found)
+                {
+                    text.text = text.text.Remove(i, firstSequence.Length);
+                    firstSequence = "";
+                    for (int k = 0; k < text.text.Length; k++)
+                    {
+                        firstSequence += text.text[k];
+                        if (firstSequence[k] == '\n')
+                            break;
+                    }
+                    found = false;
+                    break;
+                }
+            }
+            
             timer = 0f;
         }
         timer += Time.deltaTime;
@@ -34,6 +60,7 @@ public class ItemLog : MonoBehaviour
     public void OnItemAction(Item item)
     {
         text.text += "Item picked up: " + item.m_name + "\n";
+        firstSequence = "";
         for (int i = 0; i < text.text.Length; i++)
         {
             firstSequence += text.text[i];

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 namespace ScriptableObjects
 {
@@ -8,6 +9,8 @@ namespace ScriptableObjects
     {
         public List<Item> backpackItems;
         // Use this for initialization
-
+        
     }
+
+
 }
