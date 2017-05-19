@@ -786,16 +786,16 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 24
     m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
+    m_BestFit: 1
+    m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 
 --- !u!222 &1188974864
@@ -1096,7 +1096,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31b3193e79664e6419db94c20d2f560b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BackPackConfig: {fileID: 0}
 --- !u!1001 &1823512341
 Prefab:
   m_ObjectHideFlags: 0
@@ -1179,7 +1178,6 @@ GameObject:
   - component: {fileID: 1881732779}
   - component: {fileID: 1881732778}
   - component: {fileID: 1881732780}
-  - component: {fileID: 1881732781}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1263,7 +1261,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d4fd1d850beb44096ce54818272678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Items: []
+  Items:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   Capacity: 8
   Backpackconfig: {fileID: 11400000, guid: 194d4768d327d8144bd5a959456e10b2, type: 2}
   onBackPackChange:
@@ -1307,18 +1309,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefab: {fileID: 1832184018237562, guid: aa3a91369dfcea749b07467406b453d0, type: 2}
---- !u!114 &1881732781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1881732773}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31b3193e79664e6419db94c20d2f560b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BackPackConfig: {fileID: 11400000, guid: c18801eb774e66146a394b31e89223ca, type: 2}
 --- !u!1 &1890388902
 GameObject:
   m_ObjectHideFlags: 0
