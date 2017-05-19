@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Events;
@@ -11,6 +12,7 @@ public class BackPackBehaviour : MonoBehaviour
     public List<Item> Items;
     public int Capacity;
     public BackPackConfig Backpackconfig;
+    private BackPack currentBackPack;
     [System.Serializable]
     public class OnBackPackChange : UnityEvent<BackPackBehaviour>
     {
@@ -19,9 +21,11 @@ public class BackPackBehaviour : MonoBehaviour
     public OnBackPackChange onBackPackChange;
     private void Start()
     {
+        currentBackPack = new BackPack();
         Items = new List<Item>();
         foreach (var i in Backpackconfig.Items)
             AddItem(i);
+        
     }
     private void Update()
     {
@@ -34,6 +38,52 @@ public class BackPackBehaviour : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
             this.transform.position += new Vector3(.1f, 0, 0);
     }
+
+    void UpdateCurrentBackPack()
+    {
+        currentBackPack.backpackItems = Items;
+    }
+
+
+
+    public class OnSave : UnityEvent<BackPack, string>
+    { }
+
+    public void Load()
+    {
+       currentBackPack =  LoadBackPack("BackPack");
+        Items = currentBackPack.backpackItems;
+        onBackPackChange.Invoke(this);
+    }
+    public void Save()
+    {
+        SaveBackPack(currentBackPack,"BackPack");
+    }
+    private OnSave onSave = new OnSave();
+    private void SaveBackPack(BackPack bp, string fileName)
+    {
+        BackPack backpack = ScriptableObject.CreateInstance<BackPack>();
+        backpack.backpackItems = bp.backpackItems;
+        var json = JsonUtility.ToJson(backpack, true);
+        string path = Application.persistentDataPath;
+        if (!File.Exists(path))
+        {
+            Directory.CreateDirectory(path + "/Saves");
+        }
+        File.WriteAllText(path + "/Saves/" + fileName + ".json", json);
+    }
+
+    private BackPack LoadBackPack(string fileName)
+    {
+        string path = Application.persistentDataPath +"/Saves/" + fileName + ".json";
+        var json = File.ReadAllText(path);
+        BackPack bp = ScriptableObject.CreateInstance<BackPack>();
+        JsonUtility.FromJsonOverwrite(json, bp);
+        if (!bp)
+            bp = ScriptableObject.CreateInstance<BackPack>();
+        return bp;
+    }
+    
 
     public void LoadBackPackIn(BackPackConfig newBackpack)
     {
@@ -52,6 +102,8 @@ public class BackPackBehaviour : MonoBehaviour
         {
             Items.Add(item);
             onBackPackChange.Invoke(this);
+            UpdateCurrentBackPack();
+            
         }
     }
 
@@ -61,6 +113,7 @@ public class BackPackBehaviour : MonoBehaviour
         {
             Items.Remove(item);
             onBackPackChange.Invoke(this);
+            UpdateCurrentBackPack();
             
         }
     }
