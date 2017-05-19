@@ -5,6 +5,7 @@ using ScriptableObjects;
 
 public class PickupEncounterBehaviour : MonoBehaviour
 {
+    public static ItemEvent OnEvent = new ItemEvent();
     public GameObject Prefab;
     [HideInInspector]
     public GameObject TmpPrefab;
@@ -21,6 +22,7 @@ public class PickupEncounterBehaviour : MonoBehaviour
               
             print("Collision");
             ItemBehaviour b = this.GetComponent<ItemBehaviour>();
+            OnEvent.Invoke(b.ItemRuntime);
             other.gameObject.GetComponent<BackPackBehaviour>().AddItem(b.ItemRuntime);
             Destroy(Prefab);
            
