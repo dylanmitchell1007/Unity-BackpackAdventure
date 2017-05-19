@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Items: []
-  Capacity: 10
+  Capacity: 2
   Backpackconfig: {fileID: 0}
   onBackPackChange:
     m_PersistentCalls:
