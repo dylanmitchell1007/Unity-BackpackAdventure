@@ -27,15 +27,15 @@ public class SaveLoad : MonoBehaviour
             if (!_instance)
             {
                 _instance = new SaveLoad();
-                
+
 
             }
             return _instance;
-           
+
         }
         set
         {
-            
+
         }
     }
 
@@ -64,7 +64,7 @@ public class SaveLoad : MonoBehaviour
         //    backpack = Resources.FindObjectsOfTypeAll<BackPack>().FirstOrDefault();
         //    Assert.IsNotNull(backPack, "Should not be Null");
         //}
-        
+
         var json = System.IO.File.ReadAllText(path);
         JsonUtility.FromJsonOverwrite(json, backpack);
         return backpack;
@@ -73,19 +73,21 @@ public class SaveLoad : MonoBehaviour
 
     public void Update()
     {
-        
+
         if (Input.GetKeyDown(KeyCode.Home))
         {
             backPack.backpackItems = BPB.Items;
-            SaveLoad.Instance.SaveBackPack("TestingBackpack",backPack );
-                     
-           
+            SaveLoad.Instance.SaveBackPack("TestingBackpack", backPack);
+
+
         }
 
         if (Input.GetKeyDown(KeyCode.End))
         {
             backPack.backpackItems = BPB.Items;
             BPB.Items.AddRange(SaveLoad.Instance.LoadBackPack("TestingBackpack").backpackItems);
+            BPB.onBackPackChange.Invoke(BPB);
+
         }
     }
     // Use this for initialization
