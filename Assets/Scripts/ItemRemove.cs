@@ -20,14 +20,14 @@ public class ItemRemove : MonoBehaviour
 
     void Remove()
     {
-        var nig = GetComponent<BackPackBehaviour>();
-        if (nig.Items.Count > 0)
+        var Rem = GetComponent<BackPackBehaviour>();
+        if (Rem.Items.Count > 0)
         {
             var datObject = Instantiate(Prefab);
-            datObject.GetComponent<ItemBehaviour>().ItemConfig = nig.Items[0];
+            datObject.GetComponent<ItemBehaviour>().ItemConfig = Rem.Items[0];
             datObject.transform.position = this.transform.position + (this.transform.forward * 3);
-            if (nig.Items.Count > 0)
-                nig.RemoveItem(nig.Items[0]);
+            if (Rem.Items.Count > 0)
+                Rem.RemoveItem(Rem.Items[0]);
         }
     }
     // Update is called once per frame
