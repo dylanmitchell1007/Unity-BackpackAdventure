@@ -1,32 +1,35 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Reflection.Emit;
 using NUnit.Framework.Constraints;
+using NUnit.Framework.Internal;
+using ScriptableObjects;
 using UnityEngine;
 using UnityEditor;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
-[CustomEditor(typeof(TestInspector))]
-public class InspectorTest : Editor
+[CustomEditor(typeof(BackPackBehaviour))]
+public class InspectorTest : UnityEditor.Editor
 {
-    public Text call;
+  
+    
     public override void OnInspectorGUI()
     {
-        TestInspector mybackpack = (TestInspector)target;
+        List<Item> I = new List<Item>();
+        BackPack pack = target as BackPack;
+        BackPackBehaviour T = target as BackPackBehaviour;
+        if (GUILayout.Button("Shuffle"))
+        {
+            GUILayout.
+            T.Items.Capacity = int.MaxValue;
+          
 
-        
-        mybackpack.items = EditorGUILayout.IntField("Inventory", mybackpack.items);
-        EditorGUILayout.LabelField("Items", mybackpack.items.ToString());
-        EditorGUILayout.("YOU PRESSED A BUTTON", name);
-        EditorGUILayout.DropdownButton(GUIContent.none, FocusType.Keyboard);
-
+        }
+        if (T.Items.Capacity != int.MaxValue)
+        {
+            
+            T.Capacity = EditorGUILayout.IntSlider(T.Capacity, 0, 50);
+        }
     }
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

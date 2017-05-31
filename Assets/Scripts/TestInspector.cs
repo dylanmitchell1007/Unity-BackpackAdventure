@@ -1,21 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using ScriptableObjects;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "TestInspector", menuName = "Inventory/TEST",order = 4)]
-public class TestInspector : ScriptableObject
+
+public class TestInspector : MonoBehaviour
 {
 
-    public int items;
+    public bool DropdownButton;
+    public string Player;
+    public int Capacity;
 
-    public int backpack
-    {
-        get { return items / 750; }
-    }
-}
-
-public class Inventory : Item
-{
-    
 }
 
