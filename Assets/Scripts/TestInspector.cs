@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using ScriptableObjects;
 using UnityEngine;
 
-
-public class TestInspector : MonoBehaviour
+[CreateAssetMenu(fileName =  "Items", menuName = "BackPack/Items", order = 1)]
+public class TestInspector : ScriptableObject
 {
-
-    public bool DropdownButton;
-    public string Player;
-    public int Capacity;
+    public List<Item> items = new List<Item>();
+    
 
 }
 

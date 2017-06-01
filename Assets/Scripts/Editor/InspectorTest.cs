@@ -19,13 +19,12 @@ public class InspectorTest : Editor
     {
         EditorGUILayout.BeginHorizontal("Box");
         GUILayout.Label("Items in BackPack:" + As.items.Count);
-        GUILayout.Label("FUCK UNITY:" + As.items.Count);
         if (GUILayout.Button("Add Weapon"))
         {
-            
+            GUILayout.BeginScrollView(Vector2.down);
             List<Item> item = new List<Item>();
             GUILayout.Label("Items in BackPack:" + As.items.Count);
-            //ItemCustomWindow.ShowWindow();
+            ItemCustomWindow.ShowWindow();
 
 
         }

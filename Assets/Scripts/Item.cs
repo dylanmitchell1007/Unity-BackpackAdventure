@@ -8,8 +8,5 @@ using UnityEngine;
         public int id;
         public string m_name;
 
-        public static explicit operator GameObject(Item v)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
